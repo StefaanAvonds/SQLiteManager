@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Sample.Views.LoginPage"
+             BackgroundColor="White"
+             Title="Login">
+
+  <StackLayout Orientation="Vertical">
+    <StackLayout Orientation="Vertical" Padding="10">
+      <Entry Text="{Binding Username}" TextColor="Black" Placeholder="Username..." />
+      <Entry Text="{Binding Password}" TextColor="Black" Placeholder="Password..." />
+    </StackLayout>
+
+    <StackLayout Orientation="Vertical" Padding="10">
+      <Button Text="Login!" Clicked="btnLogin_Click" />
+      <Button Text="Add new users" Clicked="btnAdd_Click" />
+    </StackLayout>
+
+    <ListView ItemsSource="{Binding ListUsers}">
+      <ListView.ItemTemplate>
+        <DataTemplate>
+          <ViewCell>
+            <StackLayout Orientation="Vertical">
+              <Label Text="{Binding Username}" TextColor="Black" />
+            </StackLayout>
+          </ViewCell>
+        </DataTemplate>
+      </ListView.ItemTemplate>
+    </ListView>
+  </StackLayout>
+  
+</ContentPage>

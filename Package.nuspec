@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>SQLiteManager</id>
+    <version>1.0.0</version>
+    <authors>Stefaan Avonds</authors>
+    <owners>Stefaan Avonds</owners>
+    <projectUrl>http://PROJECT_URL_HERE_OR_DELETE_THIS_LINE</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>An install-and-go package for SQLite. You will only need to install this package, add some models and DataAccess-classes and your SQLite-database is created!</description>
+    <copyright>Copyright 2016</copyright>
+    <tags>sqlite model datamodel data-model dataaccess database</tags>
+    <dependencies>
+      <dependency id="sqlite-net-pcl" version="1.2.1" />
+    </dependencies>
+  </metadata>
+  <files>
+	<file src="SQLiteManager\SQLiteManager\bin\Release\SQLiteManager.dll" target="lib" />
+  </files>
+</package>
