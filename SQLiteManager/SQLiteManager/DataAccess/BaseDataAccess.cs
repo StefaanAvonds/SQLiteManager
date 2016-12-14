@@ -20,6 +20,11 @@ namespace SQLiteManager.DataAccess
         /// </summary>
         protected SQLiteAsyncConnection AsyncConnection => Database.AsyncConnection;
 
+        /// <summary>
+        /// ase class for every DataAccess to SQLite. This will provide the data model with the default
+        /// queries that can be overriden for a custom implementation. Other queries can also be added
+        /// to the new DataAccess-class that derives from this Base.
+        /// </summary>
         public BaseDataAccess()
         {
             CreateTable();
@@ -37,7 +42,7 @@ namespace SQLiteManager.DataAccess
             {
                 return query.Invoke().Result;
             }
-            catch (Exception ex)
+            catch
             {
                 return default(TResult);
             }
@@ -99,6 +104,7 @@ namespace SQLiteManager.DataAccess
             {
                 return AsyncConnection.Table<TDataModel>()
                     .Where(x => x.IsDeleted == false)
+                    .OrderBy(x => x.InsertTimestamp)
                     .ToListAsync();
             });
         }

@@ -13,7 +13,7 @@ namespace SQLiteManager.Windows.FileSystem
     {
         public string GetDatabaseFileLocation()
         {
-            return GetDatabaseFileLocation(Database.DefaultDatabaseFilename);
+            return GetDatabaseFileLocation(Database.DatabaseFilename);
         }
 
         public string GetDatabaseFileLocation(string databaseFilename)
@@ -25,17 +25,17 @@ namespace SQLiteManager.Windows.FileSystem
 
         public bool TryExportDatabase(out string path)
         {
-            return TryExportDatabase(Database.DefaultDatabaseFilename, out path);
+            return TryExportDatabase(Database.DatabaseFilename, out path);
         }
 
         public bool TryExportDatabase(out string path, string exportFilename)
         {
-            return TryExportDatabase(Database.DefaultDatabaseFilename, out path, exportFilename);
+            return TryExportDatabase(Database.DatabaseFilename, out path, exportFilename);
         }
 
         public bool TryExportDatabase(string databaseFilename, out string path)
         {
-            return TryExportDatabase(databaseFilename, out path, Database.DefaultExportFilename);
+            return TryExportDatabase(databaseFilename, out path, Database.ExportFilename);
         }
 
         public bool TryExportDatabase(string databaseFilename, out string path, string exportFilename)
@@ -77,7 +77,7 @@ namespace SQLiteManager.Windows.FileSystem
         private string GetExportFileLocation(string exportFilename, string extra = "")
         {
             // If the given export filename is empty, use the default filename
-            if (String.IsNullOrWhiteSpace(exportFilename)) exportFilename = Database.DefaultExportFilename;
+            if (String.IsNullOrWhiteSpace(exportFilename)) exportFilename = Database.ExportFilename;
             // If the given export filename does not contain a dot, we assume no extension is given and we provide one
             if (!exportFilename.Contains(".")) exportFilename = $"{exportFilename}.db3";
             if (!String.IsNullOrWhiteSpace(extra))

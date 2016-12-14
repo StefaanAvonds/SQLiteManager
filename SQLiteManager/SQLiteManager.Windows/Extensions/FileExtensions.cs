@@ -5,6 +5,9 @@ using Windows.Storage;
 
 namespace SQLiteManager.Windows.Extensions
 {
+    /// <summary>
+    /// Extension-methods for files.
+    /// </summary>
     public static class FileExtensions
     {
         /// <summary>

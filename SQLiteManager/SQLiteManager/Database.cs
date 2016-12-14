@@ -5,10 +5,18 @@ using Xamarin.Forms;
 
 namespace SQLiteManager
 {
+    /// <summary>
+    /// The needed database-properties are stored in this class. You can also use this to export the SQLite-file.
+    /// </summary>
     public static class Database
     {
         private static SQLiteAsyncConnection _asyncConnection;
         private static IDatabaseFile _databaseFile;
+
+        private static string _databaseFilename;
+        private static string _exportFilename;
+        private readonly static string _defaultDatabaseFilename = "my_database.db3";
+        private readonly static string _defaultExportFilename = "Database.db3";
 
         /// <summary>
         /// The asynchronous connection to the SQLite-database.
@@ -24,15 +32,31 @@ namespace SQLiteManager
         }
 
         /// <summary>
-        /// The default filename for the SQLite-database.
+        /// The name of the database-file.
         /// </summary>
-        public static String DefaultDatabaseFilename = "my_database.db3";
+        public static String DatabaseFilename
+        {
+            get
+            {
+                if (String.IsNullOrWhiteSpace(_databaseFilename)) _databaseFilename = _defaultDatabaseFilename;
+                return _databaseFilename;
+            }
+            set { _databaseFilename = value; }
+        }
 
         /// <summary>
-        /// The default filename for the exported file.
+        /// The name of the export file.
         /// </summary>
-        public static String DefaultExportFilename = "Database.db3";
-
+        public static String ExportFilename
+        {
+            get
+            {
+                if (String.IsNullOrWhiteSpace(_exportFilename)) _exportFilename = _defaultExportFilename;
+                return _exportFilename;
+            }
+            set { _exportFilename = value; }
+        }
+        
         /// <summary>
         /// Initialize the DatabaseFile-object.
         /// </summary>

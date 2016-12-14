@@ -1,5 +1,8 @@
 ﻿namespace SQLiteManager.Interfaces
 {
+    /// <summary>
+    /// Perform actions for the database-file. No query's are executed with the current interface, but exports and path-locations can be given back.
+    /// </summary>
     public interface IDatabaseFile
     {
         /// <summary>

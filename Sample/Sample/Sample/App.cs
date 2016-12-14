@@ -12,6 +12,8 @@ namespace Sample
     {
         public App()
         {
+            SQLiteManager.Database.DatabaseFilename = "SQLiteSample.db3";
+
             MainPage = new NavigationPage(new LoginPage());
         }
 
