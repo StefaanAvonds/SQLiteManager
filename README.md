@@ -1,6 +1,8 @@
 # SQLiteManager
 An install-and-go package for SQLite. You will only need to install this package, add some models and DataAccess-classes and your SQLite-database is created!
 
+**Be advised: this currently only works for Android!!**
+
 ## How to use?
 It's really easy to use this package; as the description dictates: just install the package and you are ready to go with the SQLite-database. In NuGet search for **SQLiteDatabase** by Stefaan Avonds or use the Command Line *[SQLiteDatabase] (https://www.nuget.org/packages/SQLiteDatabase/1.0.0)*.
 
