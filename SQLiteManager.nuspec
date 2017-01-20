@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
   <metadata>
     <id>SQLiteDatabase</id>
-    <version>1.0.0</version>
+    <version>1.1.2</version>
     <authors>Stefaan Avonds</authors>
     <owners>Stefaan Avonds</owners>
     <projectUrl>https://github.com/StefaanAvonds/SQLiteManager</projectUrl>
@@ -12,7 +12,7 @@
     <tags>sqlite sqlitemanager model datamodel data-model dataaccess database sqlitedatabase sql</tags>
     <dependencies>
       <dependency id="sqlite-net-pcl" version="1.2.1" />
-	  <dependency id="Xamarin.Forms" version="2.3.3.175" />
+	  <dependency id="Xamarin.Forms" version="2.3.2.127" />
     </dependencies>
   </metadata>
   <files>
@@ -23,5 +23,10 @@
 	<file src="SQLiteManager\SQLiteManager\bin\Release\SQLiteManager.xml" target="lib\MonoAndroid" />
 	<file src="SQLiteManager\SQLiteManager.Droid\bin\Release\SQLiteManager.Droid.dll" target="lib\MonoAndroid" />
 	<file src="SQLiteManager\SQLiteManager.Droid\bin\Release\SQLiteManager.Droid.xml" target="lib\MonoAndroid" />
+	
+	<file src="SQLiteManager\SQLiteManager\bin\Release\SQLiteManager.dll" target="lib\Xamarin.iOS10" />
+	<file src="SQLiteManager\SQLiteManager\bin\Release\SQLiteManager.xml" target="lib\Xamarin.iOS10" />
+	<file src="SQLiteManager\SQLiteManager.iOS\bin\iPhone\Release\SQLiteManager.iOS.dll" target="lib\Xamarin.iOS10" />
+	<file src="SQLiteManager\SQLiteManager.iOS\bin\iPhone\Release\SQLiteManager.iOS.xml" target="lib\Xamarin.iOS10" />
   </files>
 </package>
